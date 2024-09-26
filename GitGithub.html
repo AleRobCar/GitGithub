@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="git.css">
 </head>
 <body>
+
     <div class="titulo">
     <h1>Git and Github Important Lectures</h1>
     </div>
@@ -28,7 +29,7 @@
 <p>$ brew install git</p>
 
 <div class="titulo1"><strong>Crea un repositorio de Git y haz tu primer commit</strong>
-<p>step 1: git init
+<p>step 1: git init (crea un repositorio)
     ls -al (ver archivos ocultos)
     git status (verifica el status actual de git)
     git add prueba.txt
@@ -64,10 +65,43 @@ shorcut para guardar cambios en VIM
 esc + shift + zz
 
 git diff commitA commitB (muestra las diferencias entre cambios en un archivo y otro)
-    
+
 </p>
 
 
+<div class="titulo1"><strong>¿Qué es el staging?</strong>
+<p>
+El staging es el lugar donde se guardan temporalmente los cambios, para luego ser llevados definitivamente al repositorio. 
+El repositorio es el lugar donde se guardan todos los registros de los cambios realizados a los archivos.
+</p>
+
+<div class="titulo1"><strong>¿Qué es branch (rama) y cómo funciona un Merge en Git?
+</strong>
+<p>
+    Una rama o branch es una versión del código del proyecto sobre el que estás trabajando. 
+    1. Rama main (Master)
+    2. Rama development (están basadas en alguna rama main, pero sobre las cuales puedes hacer cambios a tu gusto sin necesidad de afectar directamente al código principal.)
+    3. Rama hotfix (si encuentras un bug o error de código en la rama Main (que afecta al proyecto en producción), tendrás que crear una nueva rama (que usualmente se llaman bug fixing o hot fix) para hacer los arreglos necesarios.)
+
+Cómo crear un branch o rama en Git
+Producir una nueva rama se conoce como Checkout. Unir dos ramas lo conocemos como Merge.
+El comando git branch permite crear una rama nueva. Si quieres empezar a trabajar en una nueva función,
+puedes crear una rama nueva a partir de la rama master con git branch new_branch. Una vez creada, puedes usar git checkout new_branch para cambiar a esa rama.
+
+<div class="titulo1"><strong>Volver en el tiempo en nuestro repositorio utilizando reset y checkout</strong>
+<p>
+
+</p>
+Cómo usar Git Reset
+Para volver a commits previos, borrando los cambios realizados desde ese commit, podemos utilizar:
+
+git reset --soft [SHA 1]: elimina los cambios hasta el staging area
+git reset --mixed [SHA 1]: elimina los cambios hasta el working area
+git reset --hard [SHA 1]: regresa hasta el commit del [SHA-1]
+Donde el SHA-1 es el identificador del commit
+
+El comando git checkout + ID del commit nos permite viajar en el tiempo.
+git reflog (nos permite ver commits perdidos)
 </div>
 
 
