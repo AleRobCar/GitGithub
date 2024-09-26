@@ -1,0 +1,10 @@
+body {
+    height: 100vh; /* Asegura que cubra toda la altura de la ventana */
+    margin: 0;
+    background: linear-gradient(135deg, #132fce, #03dac6); /* Degradado lineal en 135 grados */
+    font-family: 'Poppins', sans-serif; /* Tipografía moderna */
+  }
+  
+.titulo{
+    color:white
+}
