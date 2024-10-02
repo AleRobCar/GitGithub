@@ -104,6 +104,25 @@ El comando git checkout + ID del commit nos permite viajar en el tiempo.
 git reflog (nos permite ver commits perdidos)
 </div>
 
+<div class="titulo1"><strong>Repositorio remoto</strong>
+<p>
+git clone url (nos permite traer versiones del repositorio remoto cuando trabajamos con equipos)
+git push: Luego de hacer git add y git commit debemos ejecutar este comando para mandar los cambios al servidor remoto.
+git fetch: Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
+git merge: También usamos el comando git merge con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
+git pull: Básicamente, git fetch y git merge al mismo tiempo.
+</p>
+
+<div class="titulo1"><strong>Introducción a las ramas o branches de Git</strong>
+<p>
+Las ramas (branches) son la forma de hacer cambios en nuestro proyecto sin afectar el flujo de trabajo de la rama principal. Esto porque queremos trabajar una parte muy específica de la aplicación o simplemente experimentar.
+git branch -nombre de la rama-: Con este comando se genera una nueva rama.
+
+git checkout -nombre de la rama-: Con este comando puedes saltar de una rama a otra.
+
+git checkout -b rama: Genera una rama y nos mueve a ella automáticamente, Es decir, es la combinación de git branch y git checkout al mismo tiempo.
+</p>
+
 
 </body>
 </html> 
