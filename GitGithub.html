@@ -9,62 +9,67 @@
 <body>
 
     <div class="titulo">
-    <h1>Git and Github Important Lectures</h1>
+    <h1>Git and Github</h1>
     </div>
 
 <div class="apuntes">
 
 
 <div class="titulo1"><strong>¿Por qué usar un sistema de control de versiones como Git?</strong>
-</div>
 <p>Un sistema de control de versiones como Git nos ayuda a guardar el historial de cambios y crecimiento de los archivos de nuestro proyecto.
 </p>
+</div>
+
 
 <div class="titulo1"><strong>¿Qué es Git?</strong>
-</div>
 <p>Un control de versiones es un sistema que registra los cambios realizados en un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante.
 </p>
+</div>
+
 
 <div class="titulo1"><strong>Instalación de git mediante homebrew</strong>
 <p>$ brew install git</p>
 
 <div class="titulo1"><strong>Crea un repositorio de Git y haz tu primer commit</strong>
 <p>step 1: git init (crea un repositorio)
-    ls -al (ver archivos ocultos)
-    git status (verifica el status actual de git)
-    git add prueba.txt
-    git rm prueba.txt 
-    git rm --cached nombre_del_archivo.txt: para eliminar el archivo del staged(ram)  
-    git commit (manda cambios al repositorio)
-    git commit -m "deja un mensaje con -m, esto es una prueba práctica"
+    <strong>
+   <li>ls -al (ver archivos ocultos)</li>
+    <li>git status (verifica el status actual de git)</li>
+    <li>add prueba.txt</li>
+   <li> git rm prueba.txt </li>
+    <li>rm --cached nombre_del_archivo.txt: para eliminar el archivo del staged(ram)</li>
+    <li>git commit (manda cambios al repositorio)</li>
+    <li>git commit -m "deja un mensaje con -m, esto es una prueba práctica"</li>
+   </strong>
 
+    <br>
 Recuerda que Git está optimizado para trabajar en equipo, por lo tanto, debemos darle un poco de información sobre nosotros. No debemos hacerlo todas las veces que ejecutamos un comando, basta con ejecutar solo una sola vez los siguientes comandos con tu información:
 
-git config --global user.email "tu@email.com"
-git config --global user.name "Tu Nombre"
-git config --global user.name "Alejandro Robles"
+<li>git config --global user.email "tu@email.com"</li>
+<li>git config --global user.name "Tu Nombre"</li>
+<li>git config --global user.name "Alejandro Robles"</li>
 
 Si por algún motivo te equivocaste en el nombre o email que configuraste al principio, lo puedes modificar de la siguiente manera:
 
-git config --global --replace-all user.name “Aquí va tu nombre modificado”
+<li>git config --global --replace-all user.name “Aquí va tu nombre modificado”</li>
 
-eliminar y añadir uno nuevo
-git config --global --unset-all user.name :Elimina el nombre del usuario
+<strong> y añadir uno nuevo </strong>
+<li>git config --global --unset-all user.name :Elimina el nombre del usuario
 git config --global --add user.name “Aquí va tu nombre”
-git conf --list: para ver la lista de configuraciones hechas
+git conf --list: para ver la lista de configuraciones hechas</li>
 
 NOTA: Si se modifica un archivo, se edita.
-se vuelte a realizar un:
-git add . (el punto hace referencia que subira todos los archivos)
-git commit -m "dejas un nuevo mensaje"
+se vuelte a realizar un:<br>
+<li>git add . (el punto hace referencia que subira todos los archivos)</li>
+<li>git commit -m "dejas un nuevo mensaje"</li>
 
-git log (muestra toda la historia de un archivo)
-git show prueba1.txt (muestra los cambios que han existido)
+<li>git log (muestra toda la historia de un archivo)</li>
+<li>git show prueba1.txt (muestra los cambios que han existido)</li>
 
-shorcut para guardar cambios en VIM
-esc + shift + zz
-
-git diff commitA commitB (muestra las diferencias entre cambios en un archivo y otro)
+shorcut para guardar cambios en VIM <br>
+<li>esc + shift + zz</li>
+<br>
+<li>git diff commitA commitB (muestra las diferencias entre cambios en un archivo y otro)</li>
 
 </p>
 
@@ -78,14 +83,17 @@ El repositorio es el lugar donde se guardan todos los registros de los cambios r
 <div class="titulo1"><strong>¿Qué es branch (rama) y cómo funciona un Merge en Git?
 </strong>
 <p>
-    Una rama o branch es una versión del código del proyecto sobre el que estás trabajando. 
-    1. Rama main (Master)
-    2. Rama development (están basadas en alguna rama main, pero sobre las cuales puedes hacer cambios a tu gusto sin necesidad de afectar directamente al código principal.)
-    3. Rama hotfix (si encuentras un bug o error de código en la rama Main (que afecta al proyecto en producción), tendrás que crear una nueva rama (que usualmente se llaman bug fixing o hot fix) para hacer los arreglos necesarios.)
-
+    Una rama o branch es una versión del código del proyecto sobre el que estás trabajando. <br>
+    <li>1. Rama main (Master)</li>
+    <li>2. Rama development (están basadas en alguna rama main, pero sobre las cuales puedes hacer cambios a tu gusto sin necesidad de afectar directamente al código principal.)</li>
+   <li>3. Rama hotfix (si encuentras un bug o error de código en la rama Main (que afecta al proyecto en producción), tendrás que crear una nueva rama (que usualmente se llaman bug fixing o hot fix) para hacer los arreglos necesarios.)</li>
+<br>
 Cómo crear un branch o rama en Git
-Producir una nueva rama se conoce como Checkout. Unir dos ramas lo conocemos como Merge.
-El comando git branch permite crear una rama nueva. Si quieres empezar a trabajar en una nueva función,
+<br>
+Producir una nueva rama se conoce como <strong>Checkout.</strong> Unir dos ramas lo conocemos como <strong>Merge</strong>
+<br>
+El comando git branch permite crear una rama nueva. Si quieres empezar a trabajar en una nueva función.
+<br>
 puedes crear una rama nueva a partir de la rama master con git branch new_branch. Una vez creada, puedes usar git checkout new_branch para cambiar a esa rama.
 
 <div class="titulo1"><strong>Volver en el tiempo en nuestro repositorio utilizando reset y checkout</strong>
@@ -95,46 +103,453 @@ puedes crear una rama nueva a partir de la rama master con git branch new_branch
 Cómo usar Git Reset
 Para volver a commits previos, borrando los cambios realizados desde ese commit, podemos utilizar:
 
-git reset --soft [SHA 1]: elimina los cambios hasta el staging area
-git reset --mixed [SHA 1]: elimina los cambios hasta el working area
-git reset --hard [SHA 1]: regresa hasta el commit del [SHA-1]
-Donde el SHA-1 es el identificador del commit
-
-El comando git checkout + ID del commit nos permite viajar en el tiempo.
-git reflog (nos permite ver commits perdidos)
+<li>git reset --soft [SHA 1]: elimina los cambios hasta el staging area</li>
+<li>git reset --mixed [SHA 1]: elimina los cambios hasta el working area</li>
+<li>git reset --hard [SHA 1]: regresa hasta el commit del [SHA-1]</li>
+<li>Donde el SHA-1 es el identificador del commit</li>
+<br>
+<li>El comando git checkout + ID del commit nos permite viajar en el tiempo.</li>
+<li>git reflog (nos permite ver commits perdidos)</li>
 </div>
 
 <div class="titulo1"><strong>Repositorio remoto</strong>
 <p>
-git clone url (nos permite traer versiones del repositorio remoto cuando trabajamos con equipos)
-git push: Luego de hacer git add y git commit debemos ejecutar este comando para mandar los cambios al servidor remoto.
-git fetch: Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
-git merge: También usamos el comando git merge con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
-git pull: Básicamente, git fetch y git merge al mismo tiempo.
+<li>git clone url (nos permite traer versiones del repositorio remoto cuando trabajamos con equipos)</li>
+<li>git push: Luego de hacer git add y git commit debemos ejecutar este comando para mandar los cambios al servidor remoto.</li>
+<li>git fetch: Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).</li>
+<li>git merge: También usamos el comando git merge con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.</li>
+<li>git pull: Básicamente, git fetch y git merge al mismo tiempo.</li>
 </p>
 
 <div class="titulo1"><strong>Introducción a las ramas o branches de Git</strong>
 <p>
 Las ramas (branches) son la forma de hacer cambios en nuestro proyecto sin afectar el flujo de trabajo de la rama principal. Esto porque queremos trabajar una parte muy específica de la aplicación o simplemente experimentar.
-git branch -nombre de la rama-: Con este comando se genera una nueva rama.
+<br>
+<li>git branch -nombre de la rama-: Con este comando se genera una nueva rama.</li>
 
-git checkout -nombre de la rama-: Con este comando puedes saltar de una rama a otra.
+<li>git checkout -nombre de la rama-: Con este comando puedes saltar de una rama a otra.</li>
 
-git checkout -b rama: Genera una rama y nos mueve a ella automáticamente, Es decir, es la combinación de git branch y git checkout al mismo tiempo.
+<li>git checkout -b rama: Genera una rama y nos mueve a ella automáticamente, Es decir, es la combinación de git branch y git checkout al mismo tiempo.</li>
 </p>
 
 <div class="titulo1"><strong>Fusión de ramas con Git merge</strong>
 <p>
 Para hacer un merge en Git, primero asegúrate de estar en la rama correcta. Después, usa el comando git merge seguido del nombre de la rama que quieres combinar.
-git commit -am "damos mensaje" (git add + git commit)
-git checkout master (cambiamos a la rama master)
-git merge cabecera (fusionamos la rama cabecera hacia el master)
+<br>
+<li>git commit -am "damos mensaje" (git add + git commit)</li>
+<li>git checkout master (cambiamos a la rama master)</li>
+<li>git merge cabecera (fusionamos la rama cabecera hacia el master)</li>
 </p>
 
 <div class="titulo1"><strong>Resolución de conflictos al hacer un merge</strong>
 <p>
+Esto lo conocemos como conflicto y lo podemos resolver manualmente. Solo debemos hacer el merge,
+ir a nuestro editor de código y elegir si queremos quedarnos con alguna de estas dos versiones o algo diferente. Algunos editores de código como Visual Studio Code nos ayudan a resolver estos conflictos sin necesidad de borrar o escribir líneas de texto, basta con hacer clic en un botón y guardar el archivo.
+</p>
+
+<div class="titulo1"><strong>Cómo funcionan las llaves públicas y privadas</strong>
+<p>
+    <strong>
+    -Ambas personas deben crear su llave pública y privada.
+    <br>
+    - Ambas personas pueden compartir su llave pública a las otras partes (recuerda que esta llave es pública, no hay problema si la “interceptan”).<br>
+    -La persona que quiere compartir un mensaje puede usar la llave pública de la otra persona para cifrar los archivos y asegurarse que solo puedan ser descifrados con la llave privada de la persona con la que queremos compartir el mensaje.<br>
+    -El mensaje está cifrado y puede ser enviado a la otra persona sin problemas en caso de que los archivos sean interceptados.<br>
+    - La persona a la que enviamos el mensaje cifrado puede emplear su llave privada para descifrar el mensaje y ver los archivos.<br>
+    Nota: puedes compartir tu llave pública, pero nunca tu llave privada.
+    </strong>
+</p>
+
+<div class="titulo1"><strong>Configura tus llaves SSH en local</strong>
+<p>
+    1. Generar tus llaves SSH**
+    Recuerda que es muy buena idea proteger tu llave privada con una contraseña.
+    ssh-keygen -t rsa -b 4096 -C "tu@email.com"
+    <br>
+    2. Terminar de configurar nuestro sistema.
+    En Windows y Linux:
+    <br>
+    Encender el “servidor” de llaves SSH de tu computadora:
+    eval $(ssh-agent -s)
+    Añadir tu llave SSH a este “servidor”:
+    ssh-add ruta-donde-guardaste-tu-llave-privada
+    <br>
+    En Mac:
+    <br>
+    Encender el “servidor” de llaves SSH de tu computadora:
+    eval "$(ssh-agent -s)"
+    Si usas una versión de OSX superior a Mac Sierra (v10.12), debes crear o modificar un archivo “config” en la carpeta de tu usuario con el siguiente contenido (ten cuidado con las mayúsculas):
+    Host *
+    <br>
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ruta-donde-guardaste-tu-llave-privada
+    <br>
+    Añadir tu llave SSH al “servidor” de llaves SSH de tu computadora (en caso de error puedes ejecutar este mismo comando pero sin el argumento -K):
+    <br>
+    ssh-add -K ruta-donde-guardaste-tu-llave-privada
+</p>
+
+<div class="titulo1"><strong>Github</strong>
+<p>
+    GitHub es una plataforma que nos permite guardar repositorios de Git que podemos usar como servidores remotos y ejecutar algunos comandos de forma visual e interactiva (sin necesidad de la consola de comandos).
+
+    Luego de crear nuestra cuenta, podemos crear o importar repositorios, crear organizaciones y proyectos de trabajo, descubrir repositorios de otras personas, contribuir a esos proyectos, dar estrellas y muchas otras cosas.
+    
+    El README.md es el archivo que veremos por defecto al entrar a un repositorio. Es una muy buena práctica configurarlo para describir el proyecto, los requerimientos y las instrucciones que debemos seguir para contribuir correctamente.
 
 </p>
+
+<div class="titulo1"><strong>Tu primer push</strong>
+<p>
+La creación de las SSH es necesario solo una vez por cada computadora. Aquí conocerás cómo conectar a GitHub usando SSH.
+Luego de crear nuestras llaves SSH podemos entregarle la llave pública a GitHub para comunicarnos de forma segura y sin necesidad de escribir nuestro usuario y contraseña todo el tiempo.
+
+<li>git push origin main (enpuja al repositorio de github)</li>
+<li>git pull origin main(trae los cambios al repositorio local de tu computadora)</li>
+</p>
+
+<div class="titulo1"><strong>Git tag y versiones en Github</strong>
+<p>
+En Git, las etiquetas o Git tags tienen un papel importante al asignar versiones a los commits más significativos de un proyecto. Aprender a utilizar el comando git tag, entender los diferentes tipos de etiquetas, cómo crearlas, eliminarlas y compartirlas, es esencial para un flujo de trabajo eficiente.
+<br>
+Creación de etiquetas
+<li>git tag -a v0.1 -m "mensaje de tag" + hash del commit </li>
+<br>
+Eliminación de etiquetas
+Para eliminar una etiqueta, usa el siguiente comando:
+
+<li>git tag -d </li>
+
+<li>git show-ref --tags (muestra a que referencia esta conectado el tag creado)</li>
+
+<li>git push origin --tags(manda los tags creados al servidor web de github)</li>
+
+<li>git push origin :refs/tags/v0.1 (elimina las referencias en el servidor web github)</li>
+
+</p>
+
+<div class="titulo1"><strong>Manejo de ramas en Github</strong>
+<p>
+podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git utilizando el comando gitk. Gitk fue el primer visor gráfico que se desarrolló para ver de manera gráfica el historial de un repositorio de Git.
+
+<li>gitk</li>
+
+</p>
+
+<div class="titulo1"><strong>Configurar múltiples colaboradores en un repositorio de GitHub</strong>
+<p>
+
+    Por defecto, cualquier persona puede clonar o descargar tu proyecto desde GitHub, pero no pueden crear commits, ni ramas. Esto quiere decir que pueden copiar tu proyecto pero no colaborar con él. Existen varias formas de solucionar esto para poder aceptar contribuciones. Una de ellas es añadir a cada persona de nuestro equipo como colaborador de nuestro repositorio.
+<br>
+    Cómo agregar colaboradores en Github
+   <li> Solo debemos entrar a la configuración de colaboradores de nuestro proyecto. Se encuentra en:</li>
+    <li>Repositorio > Settings > Collaborators</li>
+    <li>Ahí, debemos añadir el email o username de los nuevos colaboradores.</li>
+</p>
+
+<div class="titulo1"><strong>Flujo de trabajo profesional: Haciendo merge de ramas de desarrollo a master</strong>
+<p>
+    Basicamente el flujo de trabajo seria como:
+
+   <strong> Crear ramas</strong>
+   <li> Asignar una rama a cada programador</li>
+   <li> El programador baja el repositorio con git pull origin master</li>
+    <li>El programador cambia de rama</li>
+    <li>El programador trabaja en esa rama y hace commits</li>
+   <li> El programador sube su trabajo con git push origin #nombre_rama</li>
+   <li> El jefe baja y unifica todos los cambios con merge desde la rama main </li>
+    <br>
+   <li> git checkout main</li>
+    <li>git merge header1 </li>
+    <li>git pull origin main</li>
+    <li>git push origin main</li>
+    <br>
+    
+ LISTO!
+</p>
+
+<div class="titulo1"><strong>Flujo de trabajo profesional con Pull requests</strong>
+<p>
+
+En un entorno profesional normalmente se bloquea la rama master, y para enviar código a dicha rama pasa por un code review y luego de su aprobación se unen códigos con los llamados merge request.
+
+Para realizar pruebas enviamos el código a servidores que normalmente los llamamos staging develop (servidores de pruebas) luego de que se realizan las pruebas pertinentes tanto de código como de la aplicación estos pasan al servidor de producción con el ya antes mencionado merge request.
+
+Los PR (pull requests) son la base de la colaboración a proyectos Open Source, si tienen pensando colaborar en alguno es muy importante entender esto y ver cómo se hace en las próximas clases. Por lo general es forkear el proyecto, implementar el cambio en una nueva rama, hacer el PR y esperar que los administradores del proyecto hagan el merge o pidan algún cambio en el código o commits que hiciste.
+<br>
+Proceso de un pull request para trabajo en producción:
+<br>
+Un pull request es un estado intermedio antes de enviar el merge.
+<br>
+El pull request permite que otros miembros del equipo revisen el código y así aprobar el merge a la rama.
+<br>
+Permite a las personas que no forman el equipo, trabajar y colaborar con una rama.
+<br>
+La persona que tiene la responsabilidad de aceptar los pull request y hacer los merge tienen un perfil especial y son llamados DevOps
+
+</p>
+
+<div class="titulo1"><strong>Utilizando Pull Requests en GitHub</strong>
+<p>
+    Estructura de la incorporación de cambios
+    El proceso para hacer un pull request consiste en indicar la rama y repositorio de origen y destino. De esta forma, un desarrollador podrá incluir tus cambios en su proyecto.
+    <br>
+
+    Cómo hacer un pull request
+    Un PR es un proceso crucial para facilitar la revisión y la integración efectiva del código. A continuación, veremos el paso a paso.
+    <br>
+    Solicitando un pull request
+    <br>
+    Crea una rama paralela: Antes de hacer cambios en el código, utiliza el comando git checkout -b <rama> para crear una nueva rama. Así, podrás hacer tus modificaciones sin afectar la rama principal (por ejemplo, master).
+    Realiza commits: Después de hacer cambios en los archivos, usa git commit -am '<Comentario>' para hacer un commit con un mensaje descriptivo.
+    Sube los cambios: Usa git push origin <rama> para subir tus cambios de la rama local al repositorio remoto. Reemplaza <rama> con el nombre de tu rama.
+    Crea un pull request: En el repositorio remoto (como GitHub), crea un nuevo pull request. Selecciona la rama principal como destino y tu rama con los cambios como comparación.
+    Feedback: Los revisores examinarán los cambios. Usa la sección de comentarios del pull request para discutir los cambios y proporcionar feedback adicional.
+    Realiza los cambios solicitados: Si se solicitan cambios, regresa a tu rama local y haz las modificaciones necesarias. Luego, sube los cambios al repositorio remoto usando git push origin <rama>.
+    Aceptando un pull request
+    <br>
+    Acepta los cambios en GitHub: 
+    Si estás satisfecho con los cambios propuestos en el pull request y consideras que están listos para ser fusionados con la rama principal, acepta el pull request en GitHub. De esta forma, los cambios se fusionarán en la rama principal del repositorio.
+    Realiza el merge en la rama principal: Después de aceptar el pull request, selecciona la opción para realizar el merge en GitHub. Esto combinará los cambios de la rama con los cambios existentes en la rama principal (master).
+    Para solicitar y aceptar pull requests de manera efectiva, sigue estos sencillos pasos que te ayudarán a facilitar la colaboración y la mejora continua del código en tu proyecto.
+</p>
+
+<div class="titulo1"><strong>Creando un Fork, contribuyendo a un repositorio</strong>
+<p>
+Los forks o bifurcaciones son una característica única de GitHub en la que se crea una copia exacta del estado actual de un repositorio directamente en GitHub. Este repositorio podrá servir como otro origen y se podrá clonar (como cualquier otro repositorio). En pocas palabras, lo podremos utilizar como un nuevo repositorio git cualquiera
+<br>
+Los forks son importantes porque es la manera en la que funciona el open source, ya que, una persona puede no ser colaborador de un proyecto, pero puede contribuír al mismo, haciendo mejor software que pueda ser utilizado por cualquiera.
+<br>
+Cómo se hace un fork remoto desde consola en GitHub
+Al hacer un fork, GitHub sabe que se hizo el fork del proyecto, por lo que se le permite al colaborador hacer pull request desde su repositorio propio.
+<br>
+Cuando trabajas en un proyecto que existe en diferentes repositorios remotos (normalmente a causa de un fork), es muy probable que desees poder trabajar con ambos repositorios. Para esto, puedes generar un remoto adicional desde consola.
+<br>
+git remote add <nombre_del_remoto> <url_del_remoto> 
+git remote upstream https://github.com/freddier/hyperblog
+<br>
+Al crear un remoto adicional, podremos hacer pull desde el nuevo origen. En caso de tener permisos, podremos hacer fetch y push.
+<br>
+git pull <remoto> <rama>
+git pull upstream master
+Este pull nos traerá los cambios del remoto, por lo que se estará al día en el proyecto. El flujo de trabajo cambia, en adelante se estará trabajando haciendo pull desde el upstream y push al origin para pasar a hacer pull request.
+<br>
+git pull upstream master
+git push origin master
+</p>
+
+
+<div class="titulo1"><strong>Haciendo deployment a un servidor</strong>
+<p>
+    Deploy es el proceso que permite enviar al servidor uno o varios archivos. Este servidor puede ser de prueba, desarrollo o producción.
+<br>
+    En el siguiente ejemplo veremos cómo se realiza el deployment de un documento en un servidor web básico.
+<br>   
+    Pasos para hacer deployment en un servidor web:
+<br>
+<li>  Entrar a la capeta de los archivos del servidor.</li>
+<li>  Copiar link en clone, elegir entre HTTPS o SSH del repositorio a contribuir.</li>
+<li>   -En la carpeta deseada se clona el repositorio:</li>
+<li>   git clone url</li>
+<br>
+    Deploy:<br>
+    Realizar cambios y commit en GitHub.<br>
+    Traer al Repositorio local las actualizacion para el servidor en la capeta de los archivos del servidor.<br>
+    git pull ramaRemota main<br>
+    Nota: Siempre se debe proteger el archivo .git. Dependiendo del software para el servidor web, existen diferentes maneras. La conexión entre GitHub y el servidor se puede realizar mediante: Travis (pago) o Jenkis (Open source).
+</p>
+
+<div class="titulo1"><strong>Ignorar archivos en el repositorio con .gitignore</strong>
+<p>
+No todos los archivos que agregas a un proyecto deberían ir a un repositorio. Por ejemplo, cuando tienes un archivo donde están tus contraseñas que comúnmente tienen la extensión .env o cuando te estás conectando a una base de datos; son archivos que nadie debe ver.
+Las razones principales para tomar la decisión de no agregar un archivo a un repositorio son:
+<br>
+Es un archivo con contraseñas (normalmente con la extensión .env)
+Es un blob (binary large object, objeto binario grande), mismos que son difíciles de gestionar en git.
+Son archivos que se generan corriendo comandos, por ejemplo la carpeta node_modules, que genera npm al correr el comando npm install
+<br>
+pasos para crear un archivo gitignore
+<br>
+<li>-crear un archivo dentro de la carpeta raiz (.gitignore)</li>
+<li>-*+extensión de archivos a Ignorar</li>
+<li>git add .gitignore (añadimos el archivo)</li>
+<li>git commit -am "mandamos mensaje"</li>
+<li>git pull origin main (para evitar conflictos)</li>
+<li>git push origin main (mandamos a nuestro servidor web)</li>
+</p>
+
+<div class="titulo1"><strong>Readme.md es una excelente práctica</strong>
+<p>
+    README.md es el lugar donde se explica de qué trata el proyecto, cómo utilizarlo y demás información que se considere que se deba conocer cualquier persona que vaya a trabajar de alguna forma con el proyecto.
+    <br>
+    Los archivos README son escritos en un lenguaje llamado markdown, por eso la extensión .md, mismo que es un estándar de escritura en diversos sitios (como Platzi, Wikipedia y el mismo GitHub). Aquí puedes ver las reglas de markdown.
+    <br>
+    Los README.md pueden estar en todas las carpetas, pero el más importante es el que se encuentra en la raíz. Este documento ayuda a que los colaboradores sepan información relevante del proyecto, módulo o sección. Puedes crear cualquier archivo con la extensión .md pero solo los README.md los mostrará por defecto GitHub.
+</p>
+
+<div class="titulo1"><strong>Tu sitio web público con GitHub Pages</strong>
+<p>
+    GitHub tiene un servicio de hosting gratis llamado GitHub Pages. Con él, puedes tener un repositorio alojado en GitHub y hacer que el contenido se muestre en la web en tiempo real.
+<br>
+    Este es un sitio para nuestros proyectos donde lo único que tenemos que hacer es tener un repositorio alojado. En la página, podemos seguir las instrucciones para crear este repositorio
+<br>  
+    Pasos para subir un repositorio a GitHub Pages
+<br>
+<li>Debemos tomar la llave SSH y hacer un git clone #SSHexample en mi computador local (Home).</li>
+<li>Luego, accederemos a la carpeta nueva que aparece en nuestra máquina local.</li>
+<li>Creamos un nuevo archivo que se llame index.html</li>
+<li>Guardamos los cambios, hacemos un git pull y seguido de esto un git push a master.</li>
+<li>Vamos a las opciones de settings de este repositorio y, en la parte de abajo, en la columna Github Pages, configuramos el source o fuente para que traiga la rama master</li>
+<li>Guardamos los cambios.</li>
+<li>Después de esto, podremos ver nuestro trabajo en la web como si tuviéramos nuestro propio servidor.</li>
+    
+</p>
+
+<div class="titulo1"><strong>Git Rebase: reorganizando el trabajo realizado</strong>
+<p>
+    Para hacer un rebase en la rama feature de la rama master, correrías los siguientes comandos:
+    <br>
+    git checkout feature
+    git rebase master
+    Esto trasplanta la rama feature desde su locación actual hacia la punta de la rama master:
+    <br>
+    Ahora, falta fusionar la rama feature con la rama master
+    <br>
+    git checkout master
+    <br>
+    git rebase feature
+    <br>
+    # No reorganices el historial público
+    Nunca debes reorganizar las confirmaciones una vez que se hayan enviado a un repositorio público. La reorganización sustituiría las confirmaciones antiguas por las nuevas y parecería que esa parte del historial de tu proyecto se hubiera desvanecido de repente.
+    <br>
+    El comando rebase es **_una mala práctica, sobre todo en repositorios remotos. Se debe evitar su uso, pero para efectos de práctica te lo vamos a mostrar, para que hagas tus propios experimentos. Con rebase puedes recoger todos los cambios confirmados en una rama y ponerlos sobre otra.
+    <br>
+    # Cambiamos a la rama que queremos traer los cambios
+    git checkout experiment
+    # Aplicamos rebase para traer los cambios de la rama que queremos 
+    git rebase master
+</p>
+
+<div class="titulo1"><strong>Cómo usar Git Stash: guarda cambios temporalmente</strong>
+
+<p>
+    El comando git stash te permite almacenar temporalmente (o guardar en un stash), los cambios que hayas efectuado en el código en el que estás trabajando para que puedas trabajar en otra cosa y, más tarde, regresar y volver a aplicar los cambios.
+<br>
+    Guardar los cambios en stashes resulta práctico si tienes que cambiar rápidamente de contexto y ponerte con otra cosa, pero estás en medio de un cambio en el código y no tienes todo listo para confirmar los cambios.
+<br>  
+    Git stash lo puedes usar sin necesidad de crear una nueva rama o hacer un commit. Además, no pierdes tus cambios.
+<br>  
+   <li>git stash: guarda los cambios temporalmente en memoria cuando no quieres hacer un commit aun</li>
+    <li>git stash save “mensaje”: guarda un stach con mensaje</li>
+    <li>git stash list: muestra la lista de cambios temporales</li>
+    <li>git stash pop: trae de vuelta los cambios que teníamos guardados en el ultimo stash</li>
+    <li>git stash apply stash@{n}: trae el stash que necesites con indicar su número dentro de las llaves</li>
+    <li>git stash drop: borra el ultimo stash</li>
+    <li>git stash clear: borra todos los stash</li>
+
+</p>
+
+<div class="titulo1"><strong>Git Clean: limpiar tu proyecto de archivos no deseados</strong>
+<p>
+El comando clean actúa en archivos sin seguimiento, este tipo de archivos son aquellos que se encuentran en el directorio de trabajo, pero que aún no se han añadido al índice de seguimiento de repositorio con el comando add.
+<br>
+$ git clean
+<br>
+Revisar que archivos no tienen seguimiento.
+<br>
+$ git clean --dry-run
+<br>
+Eliminar los archivos listados de no seguimiento.
+<br>
+$ git clean -f
+    
+</p>
+
+<div class="titulo1"><strong>Git cherry-pick: traer commits antiguos al head del branch</strong>
+
+<p>
+Git cherry-pick es un comando en Git que selecciona y aplica commits específicos de una rama o branch a otra. Todo, sin tener que hacer un merge completo. Así, podemos copiar un commit específico y aplicarlo de forma aislada en la rama de destino, conservando su historial.
+
+</p>
+
+<div class="titulo1"><strong> Git Reset y Reflog: úsese en caso de emergencia</strong>
+
+<p>
+    Git guarda todos los cambios aunque decidas borrarlos, al borrar un cambio lo que estás haciendo sólo es actualizar la punta del branch, para gestionar éstas puntas existe un mecanismo llamado registros de referencia o reflogs…La gestión de estos cambios es mediante los hash’es de referencia (o ref) que son apuntadores a los commits…Los recoges registran cuándo se actualizaron las referencias de Git en el repositorio local (sólo en el local), por lo que si deseas ver cómo has modificado la historia puedes utilizar el comando:
+
+   <li> git reflog</li>
+    
+    Muchos comandos de Git aceptan un parámetro para especificar una referencia o “ref”, que es un puntero a una confirmación sobre todo los comandos:
+    
+   <li> git checkout Puedes moverte sin realizar ningún cambio al commit exacto de la ref</li>
+    
+   <li> git checkout eff544f</li>
+    
+    <li>git reset: Hará que el último commit sea el pasado por la ref, usar este comando sólo si sabes exactamente qué estás haciendo</li>
+    
+   <li> git reset --hard eff544f # Perderá todo lo que se encuentra en staging y en el Working directory y se moverá el head al commit eff544f</li>
+   <li> git reset --soft eff544f # Te recuperará todos los cambios que tengas diferentes al commit eff544f, los agregará al staging area y moverá el head al commit eff544f</li>
+    
+    <li>git merge: Puedes hacer merge de un commit en específico, funciona igual que con una branch, pero te hace el merge del estado específico del commit mandado</li>
+    
+    <li>git checkout master</li>
+   <li> git merge eff544f # Fusionará en un nuevo commit la historia de master con el momento específico en el que vive</li>
+<br>
+    ¿Qué pasa cuando todo se rompe y no sabemos qué está pasando? Con git reset HashDelHEAD nos devolveremos al estado en que el proyecto funcionaba.
+<br>
+   <li> git reset --soft HashDelHEAD te mantiene lo que tengas en staging ahí.</li>
+   <li> git reset --hard HashDelHEAD resetea absolutamente todo incluyendo lo que tengas en staging.</li>
+    Atención
+    <li>git reset es una mala práctica, no deberías usarlo en ningún momento. Debe ser nuestro último recurso.</li>
+</p>
+
+<div class="titulo1"><strong>Reconstruir commits en Git con amend</strong>
+<p>
+    ¿Cómo hacer un git amend?
+    <br>
+    Utilizar amend para remendar un commit puede modificar el commit más reciente (enmendar) en la misma rama. Se ejecuta de la siguiente manera:
+    <br>
+   <li> gitadd -A # Para hacer uso de amend los archivos deben de estar en staging</li>
+    <li>git commit --amend # Remendar último commit</li>
+    
+</p>
+
+<div class="titulo1"><strong>Buscar en archivos y commits de Git con Grep y log</strong>
+
+<p>
+    A medida que nuestro proyecto en Git se hace más grande, vamos a querer buscar ciertas cosas.
+<br>
+    Por ejemplo: ¿cuántas veces en nuestro proyecto utilizamos la palabra color?
+<br> 
+    Para buscar, empleamos el comando git grep color y nos buscará en todo el proyecto los archivos en donde está la palabra color.
+<br>
+    <li>Con git grep -n color nos saldrá un output el cual nos dirá en qué línea está lo que estamos buscando.</li>
+    <li>Con git grep -c color nos saldrá un output el cual nos dirá cuántas veces se repite esa palabra y en qué archivo.</li>
+    <br>
+    Si queremos buscar cuántas veces utilizamos un atributo de HTML lo hacemos con git grep -c "<p>".
+    <b>
+    grep = para archivos
+    log = commits 
+
+</p>
+
+<div class="titulo1"><strong>Comandos y recursos colaborativos en Git y GitHub</strong>
+
+<p>
+   <li> git shortlog -sn = muestra cuantos commit han hecho cada miembros del equipo.</li>
+    <li>git shortlog -sn --all = muestra cuantos commit han hecho cada miembros del equipo hasta los que han sido eliminado</li>
+   <li> git shortlog -sn --all --no-merge = muestra cuantos commit han hecho cada miembros quitando los eliminados sin los merges</li>
+    <li>git blame ARCHIVO = muestra quien hizo cada cosa linea por linea</li>
+    <li>git COMANDO --help = muestra como funciona el comando.</li>
+    <li>git blame ARCHIVO -Llinea_inicial,linea_final= muestra quien hizo cada cosa linea por linea indicándole desde que linea ver ejemplo -L35,50</li>
+    <li>**git branch -r **= se muestran todas las ramas remotas</li>
+    <li>git branch -a = se muestran todas las ramas tanto locales como remotas</li>
+</p>
+</div>
+<footer>
+   <strong>@Hecho con amor por Alejandro Robles Carrillo</strong>
+</footer>
 
 </body>
 </html> 

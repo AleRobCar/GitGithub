@@ -1,10 +1,34 @@
-body {
-    height: 100vh; /* Asegura que cubra toda la altura de la ventana */
-    margin: 0;
-    background: linear-gradient(135deg, #132fce, #03dac6); /* Degradado lineal en 135 grados */
-    font-family: 'Poppins', sans-serif; /* Tipografía moderna */
-  }
+html, body {
+  height: 100%; 
+  background: linear-gradient(135deg, #c5c6cd, #92924c); /* Degradado lineal en 135 grados */
+  height: 100vh; /* Asegúrate de que el contenedor padre ocupe toda la pantalla */
+  display: grid; /* Usa Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+ 
+}
+
   
 .titulo{
-    color:white
+  text-align: center;
+  color:white;
+  
+}
+
+
+.titulo1{
+
+border: 0.2px solid #ddd; /* Borde ligero */
+border-radius: 20px; /* Bordes redondeados */
+max-width: 800px; /* Ancho máximo */
+font-family: Arial, sans-serif; /* Fuente legible */
+line-height: 2.5; /* Espaciado de línea para mejor legibilidad */
+margin: 2; /* Eliminar márgenes del párrafo */
+font-size: 16px; /* Tamaño de fuente */
+}
+
+footer{
+
+  color:rgb(254, 251, 247);
+  text-align: center;
 }
